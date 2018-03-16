@@ -22,4 +22,4 @@ var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
                 $(".info").append();
             
     });
-
+});
