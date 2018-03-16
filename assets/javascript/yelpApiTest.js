@@ -3,11 +3,10 @@
 
 // review: https://www.yelp.com/developers/documentation/v3/authentication#where-is-my-client-secret-going
 
-
+var url= "https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972"
 var apiKey = "gRvBKzmV6dSUtWhQeCEYwaglCqLarBUAz8UwDx2cI0-9LESTPeOGpHoQ4TumROnNJUSMaWlrJ2Uo5XWLmn2GS8O1tzku9tmHdpbiswFVfPmpGL6TkIMW7SMQ5PKrWnYx";
 var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
 
-$(document).ready(function(){
 
     $("#yelpclick").click(function(){
         
@@ -16,7 +15,7 @@ $(document).ready(function(){
         
         $.ajax({
             //Put the API Key in the request header as "Authorization: Bearer <YOUR API KEY>".
-            url: "",
+            url: url + apiKey,
             type: 'GET',
             data: {
                 format: 'json'
@@ -30,4 +29,4 @@ $(document).ready(function(){
             }
         });
     });
-});
+
