@@ -15,7 +15,8 @@ var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
         
         $.ajax({
             //Put the API Key in the request header as "Authorization: Bearer <YOUR API KEY>".
-            url: url + apiKey,
+            url: url,
+            Authorization: "Bearer" + apiKey,
             type: 'GET',
             data: {
                 format: 'json'
