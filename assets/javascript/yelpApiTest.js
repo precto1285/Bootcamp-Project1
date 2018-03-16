@@ -8,26 +8,18 @@ var apiKey = "gRvBKzmV6dSUtWhQeCEYwaglCqLarBUAz8UwDx2cI0-9LESTPeOGpHoQ4TumROnNJU
 var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
 
 
-    $("#yelpclick").click(function(){
-        
-        var city = $("#location").val("");
-        $("#location").val("");
-        
+    $("#yelpclick").click(function(event){
+        event.preventDefault();
+        var input = $("#userInput").val().trim();
+      
         $.ajax({
             //Put the API Key in the request header as "Authorization: Bearer <YOUR API KEY>".
             url: url,
+            method: 'GET',
             Authorization: "Bearer" + apiKey,
-            type: 'GET',
-            data: {
-                format: 'json'
-            },
-            success: function(response){
-                $(".info").text('');
-                
-            },
-            error: function() {
-                $(".error").text("There was an error processing your request. Please try again.")
-            }
-        });
+            }).done(function (result) {
+                console.log(result);
+                $(".info").append();
+            
     });
 
