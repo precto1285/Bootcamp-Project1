@@ -6,9 +6,8 @@
 
 //Yelp needs Oauth. May not be good to use...
 
-var tMurl= "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=U7yFX9RveYwkkgtRgbC5I2inlfCqb32G"
+var tMurl= "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey="
 var apiKey = "U7yFX9RveYwkkgtRgbC5I2inlfCqb32G";
-var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
 
 
     $("#tMasterclick").click(function(event){
@@ -17,7 +16,8 @@ var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
       
         $.ajax({
             type:"GET",
-            url: tMurl,
+            url: tMurl + apiKey,
+            Method: GET,
             async:true,
             dataType: "json",
             success: function(json) {
