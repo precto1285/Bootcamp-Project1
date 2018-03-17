@@ -15,18 +15,5 @@ console.log("hello");
         var input = $("#userInput").val().trim();
         console.log(input);
              
-        $.ajax({
-            type:"GET",
-            url:"https://app.ticketmaster.com/discovery/v2/events.json?venueId="+ input + "size=1&apikey=U7yFX9RveYwkkgtRgbC5I2inlfCqb32G",
-            async:true,
-            dataType: "json",
-            success: function(json) {
-                        console.log(json)
-                        // Parse the response.
-                        // Do other things.
-                     },
-            error: function(xhr, status, err) {
-                        // This time, we do not end up here!
-                     }
-          });
+        
 });
