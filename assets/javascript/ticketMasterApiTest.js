@@ -21,7 +21,7 @@ console.log("hello");
             async:true,
             dataType: "json",
             success: function(json) {
-                        console.log(json);
+                        console.log(json)
                         // Parse the response.
                         // Do other things.
                      },
