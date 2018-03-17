@@ -22,7 +22,7 @@ console.log("hello");
             dataType: "json",
             success: function(json) {
                         console.log(json);
-                        $(".info").append();
+                        $(".info").append(json);
                         // Parse the response.
                         // Do other things.
                      },
