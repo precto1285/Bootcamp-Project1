@@ -8,12 +8,13 @@
 
 var tMurl= "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey="
 var apiKey = "U7yFX9RveYwkkgtRgbC5I2inlfCqb32G";
+console.log("hello");
 
-
-    $("#tMasterclick").click(function(event){
+    $("#tMasterclick").on("click", function(event){
         event.preventDefault();
         var input = $("#userInput").val().trim();
-      
+        console.log(input);
+             
         $.ajax({
             type:"GET",
             url:"https://app.ticketmaster.com/discovery/v2/events.json?venueId="+ input + "size=1&apikey=U7yFX9RveYwkkgtRgbC5I2inlfCqb32G",
