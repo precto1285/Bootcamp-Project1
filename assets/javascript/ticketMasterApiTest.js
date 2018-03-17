@@ -21,8 +21,7 @@ console.log("hello");
             async:true,
             dataType: "json",
             success: function(json) {
-                        console.log(json);
-                        $(".info").append(json);
+                        console.log(json)
                         // Parse the response.
                         // Do other things.
                      },
