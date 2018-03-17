@@ -3,6 +3,9 @@
 
 // review: https://www.yelp.com/developers/documentation/v3/authentication#where-is-my-client-secret-going
 
+
+//Yelp needs Oauth. May not be good to use...
+
 var url= "https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972"
 var apiKey = "gRvBKzmV6dSUtWhQeCEYwaglCqLarBUAz8UwDx2cI0-9LESTPeOGpHoQ4TumROnNJUSMaWlrJ2Uo5XWLmn2GS8O1tzku9tmHdpbiswFVfPmpGL6TkIMW7SMQ5PKrWnYx";
 var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
