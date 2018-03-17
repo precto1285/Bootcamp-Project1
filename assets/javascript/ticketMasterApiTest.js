@@ -16,8 +16,7 @@ var apiKey = "U7yFX9RveYwkkgtRgbC5I2inlfCqb32G";
       
         $.ajax({
             type:"GET",
-            url: tMurl + apiKey,
-            Method: GET,
+            url:"https://app.ticketmaster.com/discovery/v2/events.json?venueId="+ input + "size=1&apikey=U7yFX9RveYwkkgtRgbC5I2inlfCqb32G",
             async:true,
             dataType: "json",
             success: function(json) {
