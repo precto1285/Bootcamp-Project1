@@ -8,18 +8,18 @@ var apiKey = "gRvBKzmV6dSUtWhQeCEYwaglCqLarBUAz8UwDx2cI0-9LESTPeOGpHoQ4TumROnNJU
 var clientId = "oaIQiNx4zJrgK8w3E8SoCg";
 
 
-    $("#yelpclick").click(function(event){
-        event.preventDefault();
-        var input = $("#userInput").val().trim();
+    // $("#yelpclick").click(function(event){
+    //     event.preventDefault();
+    //     var input = $("#userInput").val().trim();
       
         $.ajax({
             //Put the API Key in the request header as "Authorization: Bearer <YOUR API KEY>".
-            url: url,
+            url: "https://api.yelp.com/v3/businesses/search",
             method: 'GET',
-            Authorization: "Bearer" + apiKey,
+            // Authorization: "Bearer" + apiKey,
             }).done(function (result) {
                 console.log(result);
-                $(".info").append();
+                $(".info").append(result);
             
     });
-});
+// });
