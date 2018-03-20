@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Used as an example only to position the footer at the end of the page.
     You can delete these styles or move it to your custom css file -->
-  <style>
+  <!-- <style>
     body {
       display: flex;
       min-height: 100vh;
@@ -24,15 +24,17 @@
     main {
       flex: 1 0 auto;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
   <header>
-    <nav class="cyan">
+    <nav class="orange">
       <div class="nav-wrapper">
         <div class="container">
-          <a href="#" class="brand-logo">BandSpot</a>
+          <a href="#" class="brand-logo">
+            BandSpot
+          </a>
           <a href="#" data-activates="mobile-menu" class="button-collapse">
             <i class="material-icons">menu</i>
           </a>
@@ -40,10 +42,10 @@
             <li>
               <div class="userView">
                 <div class="background">
-                  <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg" alt="Background Sidenav">
+                  <!-- <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg" alt="Background Sidenav"> -->
                 </div>
                 <a href="#!user">
-                  <img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg" alt="User Image Sidenav">
+                  <!-- <img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg" alt="User Image Sidenav"> -->
                 </a>
                 <a href="#!name">
                   <span class="white-text name">John Doe</span>
@@ -73,7 +75,7 @@
   <main>
     <!-- Your content here -->
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper grey lighten-1">
         <form>
           <div class="input-field">
             <input id="search" type="search" required>
@@ -86,52 +88,93 @@
       </div>
     </nav>
 
-    <div class="card">
+    <!-- <div class="card">
       <div class="card-content">
         <p>This is where we will write the .val() of the user input.</p>
       </div>
+    </div> -->
 
-      <!-- These are the tabs for the sections -->
-      <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-          <li class="tab">
-            <a class="active" href="#artist-info">Artist</a>
-          </li>
-          <li class="tab">
-            <a href="#venue-info">Location / Tour</a>
-          </li>
-          <li class="tab">
-            <a href="#genre-info">Similar Artists</a>
-          </li>
-          <li class="tab">
-            <a href="#fav-info">Your Favorites</a>
-          </li>
-
-        </ul>
-      </div>
+    <!-- These are the tabs for the sections -->
+    <!-- <div class="row">
+      <div class="col s12"> -->
+    <div class="card-tabs">
+      <ul class="tabs white tabs-fixed-width">
+        <li class="tab">
+          <a class="active" href="#artist-info">Artist</a>
+        </li>
+        <li class="tab">
+          <a href="#venue-info">Location / Tour</a>
+        </li>
+        <li class="tab">
+          <a href="#genre-info">Similar Artists</a>
+        </li>
+        <li class="tab">
+          <a href="#fav-info">Your Favorites</a>
+        </li>
+      </ul>
+      <!-- </div>
+      </div> -->
 
       <div class="card-content grey lighten-4">
-          <!-- This is where you will append your JQuery elements per the individual tabs. -->
-        <div id="artist-info">Artist information will render here.(BandsinTown API)</div>
+        <!-- This is where you will append your JQuery elements per the individual tabs. -->
+        <div id="artist-info">
+          <div class="slider">
+            <ul class="slides">
+              <li>
+                <img src="./assets/images/yvette-de-wit-118721-unsplash.jpg">
+                <!-- random image -->
+                <div class="caption center-align white-text bold">
+                  <h3>Welcome to BandSpot!</h3>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <h5>We bring you closer to today's music. Try our search today!</h5>
+                </div>
+              </li>
+              <li>
+                <img src="./assets/images/mike-giles-5655-unsplash.jpg">
+                <!-- random image -->
+                <div class="caption right-align white-text bold">
+                  <h3>How to use BandSpot:</h3>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <h5>Search for your favorite musician and we'll bring you the rest.</h5>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <img src="./assets/images/yvette-de-wit-118721-unsplash.jpg" class="responsive-img" alt="live band pic">
+
+          <div class="caption center-align">
+            <h3>Welcome to BandSpot!</h3>
+            <h5 class="black-text text-lighten-3">We bring you closer to today's music. Search for your favorite musician here.</h5>
+          </div> -->
 
         <div id="venue-info">Tour information will go here. (BandsinTown API w/ Yelp API for venue info)</div>
 
         <div id="genre-info">Similar Artists (Taken from BandsinTown similar genres)</div>
 
         <div id="fav-info">Your Favorites here from button.</div>
-
       </div>
-    </div>
+      <!-- </div> -->
   </main>
-  <footer class="page-footer cyan">
+  <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col s12 m8 l6">
           <h5 class="white-text">First Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col s12 m4 l6">
-          <h5 class="white-text">Second Footer Content</h5>
           <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
         </div>
       </div>
@@ -148,13 +191,14 @@
     crossorigin="anonymous"></script>
   <!-- Materialize JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script>
+  <!-- <script>
     $("document").ready(function () {
       $(".button-collapse").sideNav();
     });
-  </script>
+  </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
@@ -173,42 +217,86 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS 
+    <!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> -->
+<!-- Bootstrap CSS 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/javascript/script.js"></script>
-   
-  </head>
-  <body>
-      <header></header>
-      <main>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script src="assets/javascript/script.js"></script> -->
 
-        <!-- ticket master Testing Area...Do Not Override 
+<!-- </head> -->
+
+<!-- <body>
+  <header></header>
+  <main>
+    <div class="carousel">
+      <a class="carousel-item" href="#one!">
+        <img src="http://lorempixel.com/250/250/nature/1" alt="">
+      </a>
+      <a class="carousel-item" href="#two!">
+        <img src="http://lorempixel.com/250/250/nature/2" alt="">
+      </a>
+      <a class="carousel-item" href="#three!">
+        <img src="http://lorempixel.com/250/250/nature/3" alt="">
+      </a>
+      <a class="carousel-item" href="#four!">
+        <img src="http://lorempixel.com/250/250/nature/4" alt="">
+      </a>
+      <a class="carousel-item" href="#five!">
+        <img src="http://lorempixel.com/250/250/nature/5" alt="">
+      </a>
+    </div>
+    <!-- Yelp Testing Area...Do Not Override -->
+<!-- <div id="yelpSearch"> -->-->
+
+<!-- ticket master Testing Area...Do Not Override 
         <div id=tMasterSearch>
         <input id="userInput" type="text"></input>
       </div>
         <button id="tMasterclick" class="btn">Tickets</button>
         <div id="ticketMaster">
-          <p class="infotm"></p>
+          <p class="info"></p>
           <p class="error"></p>
         </div>
+        <div id="lastFmApiSearch">
+          <input id="lastFmUserInput" type="text" placeholder="type Last.fm search here"></input>
 
         <!-- Yelp Testing Area...Do Not Override 
         <div id=yelpSearch>
           <input id="user_Input" type="text"></input>
         </div>
-          <button id="yelpclick" class="btn">Yelp</button>
-          <div id="yelpInfo">
-            <p class="infoyp"></p>
+          <button id="lastFmClick" class="btn">Similar Artists</button>
+          <div id="lastFmAPI">
+            <p class="info"></p>
             <p class="error"></p>
           </div>
-
+          <div id="bandPicApiSearch">
+            <button id="bandPicClick" class="btn">Band Pic</button>
+          </div>
       </main>
       <footer></footer>
       
     <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://momentjs.com/downloads/moment-with-locales.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+      <script src="assets/javascript/ticketMasterApiTest.js"></script>
+      <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="./assets/javascript/script.js"></script>
+      <script src="./assets/javascript/yelpApiTest.js"></script>
+      <script src="./assets/javascript/lastfmApiTest.js"></script>
+      <script src="./assets/javascript/carouselTest.js"></script> -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS 
     <script src="assets/javascript/yelpApiTest.js"></script>
     <script src="assets/javascript/ticketMasterApiTest.js"></script>
