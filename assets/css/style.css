@@ -11,3 +11,14 @@ main {
 h1, h2, h3, h4, h5 {
     text-shadow: 1px 1px 3px #550000;
 }
+nav {
+    background: #ff9800;
+    border: none;
+}
+.nav-wrapper {
+    margin: 0;
+    color: #ff9800;
+}
+.slider .indicators .indicator-item.active {
+    background-color: #ee6e73;
+}
