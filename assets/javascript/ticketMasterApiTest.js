@@ -41,7 +41,7 @@ $("#tMasterclick").on("click", function (event) {
                 var facebook = json._embedded.attractions[0].externalLinks.facebook[0].url;
                 $("#facebook").html('<a href="' + facebook + '" target="_blank">' + facebook + '</a>');
             }
-s
+
         },
         error: function (xhr, status, err) {
             // This time, we do not end up here!
