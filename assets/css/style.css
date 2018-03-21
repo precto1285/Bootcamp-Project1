@@ -18,7 +18,27 @@ nav {
 .nav-wrapper {
     margin: 0;
     color: #ff9800;
+    width: 80%;
+    margin: 0 auto;
 }
 .slider .indicators .indicator-item.active {
     background-color: #ee6e73;
 }
+/* Overlapping the main containers  */
+#main-body-wrapper {
+    width: 100%;
+    height: 440px;
+    position: relative;
+  }
+  .card-content,
+  .card-tabs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .card-tabs {
+      z-index: 10;
+  }
+  /* End the overlapping main container.  Need to fix clear additional tabs. */
