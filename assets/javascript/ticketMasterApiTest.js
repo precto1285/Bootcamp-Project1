@@ -6,7 +6,7 @@
 
 //Yelp needs Oauth. May not be good to use...
 
-var tMurl= "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey="
+var tMurl= "https://app.ticketmaster.com/discovery/v2/venues.json?keyword=UCV&apikey="
 var apiKey = "U7yFX9RveYwkkgtRgbC5I2inlfCqb32G";
 console.log("hello");
 
@@ -15,5 +15,18 @@ console.log("hello");
         var input = $("#userInput").val().trim();
         console.log(input);
              
+        $.ajax({
+            type:"GET",
+            url: tMurl + apiKey,
+            async:true,
+            dataType: "json",
+            success: function(json) {
+                        console.log(json);
+                       
+                     },
+            error: function(xhr, status, err) {
+                        // This time, we do not end up here!
+                     }
+          });
         
 });
