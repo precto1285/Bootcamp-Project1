@@ -21,27 +21,49 @@ $("#tMasterclick").on("click", function (event) {
         success: function (json) {
             console.log(json);
 
-            //external link to homepage:
-            if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('homepage')) {
+            //external link to youtube:
+            if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('youtube')) {
                 console.log("works");
-                var homePage = json._embedded.attractions[0].externalLinks.homepage[0].url;
-                $("#website").html('<a href="' + homePage + '" target="_blank">' + homePage + '</a>');
+                var youTube = json._embedded.attractions[0].externalLinks.youtube[0].url;
+                $("#youtube").attr("href", youTube);
+            }
+            else{
+                $("#youtube").addClass("unavailable");
             }
 
             //external link to instagram:
             if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('instagram')) {
                 console.log("works");
                 var instagram = json._embedded.attractions[0].externalLinks.instagram[0].url;
-                $("#instagram").html('<a href="' + instagram + '" target="_blank">' + instagram + '</a>');
+                $("#instagram").attr("href", instagram);
+            }
+            else{
+                $("#instagram").addClass("unavailable");
             }
 
             //external link to facebook:
             if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('facebook')) {
                 console.log("works");
                 var facebook = json._embedded.attractions[0].externalLinks.facebook[0].url;
-                $("#facebook").html('<a href="' + facebook + '" target="_blank">' + facebook + '</a>');
+                $("#facebook").attr("href", facebook);
             }
-s
+            else{
+                $("#facebook").addClass("unavailable");
+            }
+            //external link to Genre:
+            if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('genre')) {
+                console.log("works");
+                var genre = json._embedded.attractions[0].classifications[0].genre.name;
+                $("#genre").html(genre);
+            }
+            if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('subGenre')) {
+                console.log("works");
+                var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
+                $("#genre").append(subGenre);
+            }
+            
+            
+
         },
         error: function (xhr, status, err) {
             // This time, we do not end up here!

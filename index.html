@@ -37,7 +37,7 @@
       <div class="nav-wrapper grey lighten-1">
         <form>
           <div class="input-field">
-            <input id="search" type="search" required>
+            <input id="search" type="search" required placeholder="Search your band here!">
             <label class="label-icon" for="search">
               <i class="material-icons">search</i>
             </label>
@@ -47,27 +47,11 @@
       </div>
     </nav>
 
-    <div class="card-tabs">
-      <ul class="tabs white tabs-fixed-width">
-        <li class="tab">
-          <a class="active" href="#artist-info">Artist</a>
-        </li>
-        <li class="tab">
-          <a href="#venue-info">Location / Tour</a>
-        </li>
-        <li class="tab">
-          <a href="#genre-info">Similar Artists</a>
-        </li>
-        <li class="tab">
-          <a href="#fav-info">Your Favorites</a>
-        </li>
-      </ul>
-      <!-- </div>
-      </div> -->
-
+    <!-- </div>
+    </div> -->
+    <div id="main-body-wrapper">
       <div class="card-content grey lighten-4">
         <!-- This is where you will append your JQuery elements per the individual tabs. -->
-        <div id="artist-info">
           <div class="slider">
             <ul class="slides">
               <li>
@@ -104,17 +88,28 @@
               </li>
             </ul>
           </div>
-        </div>
-        <!-- <img src="./assets/images/yvette-de-wit-118721-unsplash.jpg" class="responsive-img" alt="live band pic">
+        <div id="background-fade">
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs white tabs-fixed-width">
+              <li class="tab">
+                <a class="active" href="#artist-info">Artist</a>
+              </li>
+              <li class="tab">
+                <a href="#venue-info">Location / Tour</a>
+              </li>
+              <li class="tab">
+                <a href="#genre-info">Similar Artists</a>
+              </li>
+              <li class="tab">
+                <a href="#fav-info">Your Favorites</a>
+              </li>
+            </ul>
+            <div id="artist-info">Band name, with additional API info placed here.</div>
 
-          <div class="caption center-align">
-            <h3>Welcome to BandSpot!</h3>
-            <h5 class="black-text text-lighten-3">We bring you closer to today's music. Search for your favorite musician here.</h5>
-          </div> -->
+            <div id="venue-info">Tour information will go here. (BandsinTown API w/ Yelp API for venue info)</div>
 
-        <div id="venue-info">Tour information will go here. (BandsinTown API w/ Yelp API for venue info)</div>
-
-        <div id="genre-info">Similar Artists (Taken from BandsinTown similar genres)</div>
+            <div id="genre-info">Similar Artists (Taken from BandsinTown similar genres)</div>
 
         <div id="fav-info">
           <div class="row">
@@ -141,8 +136,12 @@
           </div>
         </div>
 
+
+         
+ 
       </div>
-      <!-- </div> -->
+    </div>
+    <!-- </div> -->
   </main>
   <footer class="page-footer orange">
     <div class="container">
@@ -164,8 +163,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-<!-- Firebase link-->
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- Firebase link-->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
 
   <script src="./assets/javascript/script.js"></script>
