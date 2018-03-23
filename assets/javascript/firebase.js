@@ -10,7 +10,9 @@
 firebase.initializeApp(config);
 
        
-    
+      var timestamp = "";
+      var myDate = new Date(timestamp*1000);
+      var formatedTime=myDate.toJSON();
        var database = firebase.database();
 
        
@@ -55,6 +57,8 @@ firebase.initializeApp(config);
  
             // Log everything that's coming out of snapshot
           console.log(childSnapshot.val().search);
+          moment(childSnapshot.val().dateAdded).format("MMM Do YY");  
+          
              
             });   
  
@@ -62,10 +66,16 @@ firebase.initializeApp(config);
  
           // Change the HTML to reflect
           $("#search").text(snapshot.val().search);
+          $("#fav-info").text(snapshot.val().search);
 
-          moment().format("MMM Do YY");  
+        });
+        
+            
+        
+          
+          
 
-            });
+            
    
           }
          });
