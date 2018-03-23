@@ -56,7 +56,7 @@ nav {
       z-index: 5;
       background-color: black;
       /* Change me!!! */
-      opacity: 1;
+      opacity: .2;
       height: 440px;
   }
   .card-tabs {
@@ -84,4 +84,4 @@ nav {
       width: 2em;
   }
 
-  
+.class  
