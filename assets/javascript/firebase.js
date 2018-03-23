@@ -10,10 +10,12 @@
 firebase.initializeApp(config);
 
        
-      var timestamp = "";
-      var myDate = new Date(timestamp*1000);
-      var formatedTime=myDate.toJSON();
-       var database = firebase.database();
+      // var timestamp = "";
+      // var myDate = new Date(timestamp*1000);
+      // var formatedTime=myDate.toJSON();
+
+        var favorites = [""];      
+        var database = firebase.database();
 
        
         // Cancel the default action, if needed
@@ -39,7 +41,8 @@ firebase.initializeApp(config);
          // Code for handling the push
             database.ref().push({
             search: search,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
+            // dateAdded: firebase.database.ServerValue.TIMESTAMP
+            favorites: favorites,
          });
       
    
@@ -66,16 +69,20 @@ firebase.initializeApp(config);
  
           // Change the HTML to reflect
           $("#search").text(snapshot.val().search);
-          $("#fav-info").text(snapshot.val().search);
+          // $("#fav-info").text(snapshot.val().search);
 
         });
-        
-            
-        
-          
-          
 
-            
+             // This function handles events where one button is clicked
+    $("#search").on("click", function (snapshot) {
+      event.preventDefault();
+      // This line grabs the input from the textbox
+      var input = $("#search").val().trim();
+      // Adding the drinks from the textbox to our array
+      database.favorites.prepend(input);
+      console.log(snapshot.favorites);
+      
+    });
    
           }
          });
