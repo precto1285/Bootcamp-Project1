@@ -63,7 +63,7 @@ nav {
     z-index: 5;
     background-color: black;
     /* Change me!!! */
-    opacity: .2;
+    opacity: 0;
     height: 544px;
 }
 .card-tabs {
@@ -78,6 +78,7 @@ nav {
 
 #artist-name {
     margin: 0;
+    color: white;
 }
 
 #main-image-element {
@@ -95,6 +96,9 @@ nav {
     align-items: center;
     padding: 0 1em 0 1em;
 }
+.card-contents {
+    /* visibility: hidden; */
+}
 
 .social-button {
     height: 2em;
@@ -107,3 +111,7 @@ nav {
    opacity: 0.3;
 }
 
+#spotify-player {
+    width: 100%;
+    height: inherit;
+}
