@@ -13,7 +13,13 @@ h1, h2, h3, h4, h5 {
 }
 .slider {
     background-color: none;
+    height: 572px;
 }
+.slides {
+    display: inline !important;
+    /* height: 544px; */
+}
+
 nav {
     background: #ff9800;
     border: none;
@@ -37,39 +43,51 @@ nav {
 /* Overlapping the main containers  */
 #main-body-wrapper {
     width: 100%;
-    height: 440px;
+    height: 544px;
     position: relative;
-  }
-  .card-content,
-  .card-tabs,
-  #background-fade {
+}
+
+.card-content,
+.card-tabs,
+#background-fade {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .card-content {
-      height: 48px;
-  }
-  #background-fade {
-      z-index: 5;
-      background-color: black;
-      /* Change me!!! */
-      opacity: .2;
-      height: 440px;
-  }
-  .card-tabs {
-      z-index: 10;
-  }
+}
+.card-content {
+    height: 48px;
+}
+#background-fade {
+    z-index: 5;
+    background-color: black;
+    /* Change me!!! */
+    opacity: 0;
+    height: 544px;
+}
+.card-tabs {
+    z-index: 10;
+}
   /* End the overlapping main container.  Need to fix clear additional tabs. */
+#artist-info {
+    /* width: 90%; */
+    padding: 25px;
+    margin: 0 auto;
+}
+
+#artist-name {
+    margin: 0;
+    color: white;
+}
+
 #main-image-element {
     background-color: lime;
     height: 20em;
     width: 20em;
 }
 
-  #site-icons {
+#site-icons {
     width: 20em;
     height: 3em;
     background-color: yellow;
@@ -78,14 +96,22 @@ nav {
     align-items: center;
     padding: 0 1em 0 1em;
 }
+.card-contents {
+    /* visibility: hidden; */
+}
 
-  .social-button {
-      height: 2em;
-      width: 2em;
-  }
+.social-button {
+    height: 2em;
+    width: 2em;
+}
 
-  .unavailable {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-    opacity: 0.3;
-  }
+.unavailable {
+   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+   filter: grayscale(100%);
+   opacity: 0.3;
+}
+
+#spotify-player {
+    width: 100%;
+    height: inherit;
+}
