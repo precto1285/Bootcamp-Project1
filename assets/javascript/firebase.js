@@ -28,6 +28,7 @@ firebase.initializeApp(config);
          if (event.keyCode === 13){
           event.preventDefault();
           console.log("hi");
+       
       
 
       //    // Grabbed values from text boxes
@@ -97,3 +98,7 @@ database.ref().on("child_added", function(snap){
          });
         
       
+
+        // Click function for favorites button
+
+        
