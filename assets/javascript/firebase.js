@@ -14,7 +14,7 @@ firebase.initializeApp(config);
       // var myDate = new Date(timestamp*1000);
       // var formatedTime=myDate.toJSON();
 
-        var favorites = [""];      
+        var favorites = ""      
         var database = firebase.database();
 
        
@@ -32,10 +32,10 @@ firebase.initializeApp(config);
 
       //    // Grabbed values from text boxes
           var search = $("#search").val().trim();
-            
-          
-         console.log(search);
-       
+          favorites = $("#search").val().trim();
+          console.log(search);
+        //  database.favorites.push(input);
+        //  console.log(snapshot.favorites);
 
 
          // Code for handling the push
@@ -54,16 +54,7 @@ firebase.initializeApp(config);
       //    console.log(search);
          
  
-      });
- 
-        database.ref().on("child_added", function(childSnapshot) {
- 
-            // Log everything that's coming out of snapshot
-          console.log(childSnapshot.val().search);
-          moment(childSnapshot.val().dateAdded).format("MMM Do YY");  
-          
-             
-            });   
+      });   
  
             database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
  
@@ -76,14 +67,33 @@ firebase.initializeApp(config);
              // This function handles events where one button is clicked
     $("#search").on("click", function (snapshot) {
       event.preventDefault();
-      // This line grabs the input from the textbox
-      var input = $("#search").val().trim();
-      // Adding the drinks from the textbox to our array
-      database.favorites.prepend(input);
-      console.log(snapshot.favorites);
+      // // This line grabs the input from the textbox
+      // var input = $("#search").val().trim();
+      // // Adding the drinks from the textbox to our array
+      // database.favorites.prepend(input);
+      // console.log(snapshot.favorites);
       
     });
+
+    //Initial Load  and on child added
+database.ref().on("child_added", function(snap){
+
+	// firstTrain = snap.val().first;
+	// frequency = snap.val().frequency;
+	// nextArrival();
+
+	$("#fav-info-table").append("<td>" + snap.val().favorites + "</td>")
+		"</td><td>" + snap.val().favorites + "</td>"
+		// "</td><td>" + snap.val().frequency + 
+    // "</td><td>" + snap.val().nextTrain +
+ 
+
+// Handle the errors
+}, function(errorObject){
+	console.log("Errors handled: " + errorObject.code);
+});
    
           }
          });
         
+      
