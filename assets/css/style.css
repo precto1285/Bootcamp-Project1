@@ -55,12 +55,34 @@ nav {
   #background-fade {
       z-index: 5;
       background-color: black;
-      opacity: .3;
+      /* Change me!!! */
+      opacity: .2;
+      height: 440px;
   }
   .card-tabs {
       z-index: 10;
   }
   /* End the overlapping main container.  Need to fix clear additional tabs. */
+#main-image-element {
+    background-color: lime;
+    height: 20em;
+    width: 20em;
+}
+
+  #site-icons {
+    width: 20em;
+    height: 3em;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em 0 1em;
+}
+
+  .social-button {
+      height: 2em;
+      width: 2em;
+  }
 
   .unavailable {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
