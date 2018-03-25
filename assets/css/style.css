@@ -90,7 +90,7 @@ nav {
 #site-icons {
     width: 20em;
     height: 3em;
-    background-color: yellow;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
