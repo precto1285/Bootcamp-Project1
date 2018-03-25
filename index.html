@@ -117,13 +117,13 @@
               </a>
             </div>
             <div id="site-icons">
-              <a id="facebook-link" href="#">
+              <a id="facebook-link" href="#" target="_blank">
                 <img class="social-button" src="assets/images/facebook.png">
               </a>
-              <a id="instagram-link" href="#">
+              <a id="instagram-link" href="#" target="_blank">
                 <img class="social-button" src="assets/images/instagram.png">
               </a>
-              <a id="youtube-link" href="#">
+              <a id="youtube-link" href="#" target="_blank">
                 <img class="social-button" src="assets/images/youtube.png">
               </a>
             </div>
@@ -132,54 +132,55 @@
 
           <!-- Artist info mirrored on tour information -->
           <div id="venue-info" class="card-contents">
-            <div id="artist-name-container">
-              <h1 id="artist-name">Temp Banana Name</h1>
-            </div>
-            <div id="main-image-container">
-              <a id="main-image-link" href="#">
-                <img id="main-image-element" src="assets/images/placeholder.png"> </a>
-            </div>
-            <div id="site-icons">
-              <a id="facebook-link" href="#">
-                <img class="social-button" src="assets/images/facebook.png">
-              </a>
-              <a id="instagram-link" href="#">
-                <img class="social-button" src="assets/images/instagram.png">
-              </a>
-              <a id="youtube-link" href="#">
-                <img class="social-button" src="assets/images/youtube.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-          <div id="genre-info" class="card-contents">Similar Artists (Taken from BandsinTown similar genres)</div>
-
-          <div id="fav-info" class="card-contents">
-            <div id="fav-info">Your Favorites.
-              <div class="row">
-                <table class="table" id="fav-info-table">
-                  <tr>
-                    <th class="bg-warning">Favorites</th>
-                  </tr>
-                </table>
+            <div id="artist-info">
+              <div id="artist-name-container">
+                <h1 id="artist-name">Temp Banana Name</h1>
+              </div>
+              <div id="main-image-container">
+                <a id="main-image-link" href="#">
+                  <img id="main-image-element" src="assets/images/placeholder.png">
+                </a>
+              </div>
+              <div id="site-icons">
+                <a id="facebook-link" href="#">
+                  <img id="facebook-img" class="social-button" src="assets/images/facebook.png">
+                </a>
+                <a id="instagram-link" href="#">
+                  <img id="instagram-img" class="social-button" src="assets/images/instagram.png">
+                </a>
+                <a id="youtube-link" href="#">
+                  <img id="youtube-img" class="social-button" src="assets/images/youtube.png">
+                </a>
               </div>
 
+              <div id="genre-info" class="card-contents">Similar Artists (Taken from BandsinTown similar genres)</div>
+
+              <div id="fav-info" class="card-contents">
+                <div id="fav-info">Your Favorites.
+                  <div class="row">
+                    <table class="table" id="train-schedule">
+                      <tr>
+                        <th class="bg-warning">Favorites</th>
+                      </tr>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+
+
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
   </main>
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col s12 m8 l6">
-          <!-- <iframe src="https://open.spotify.com/embed?uri=spotify:album:1DFixLWuPkv3KT3TnV35m3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+          <!-- <iframe  id="spotify-player" src="https://open.spotify.com/embed?uri=spotify:track:5HNCy40Ni5BZJFw1TKzRsC" width="300" height="80" frameborder="0"
+                  allowtransparency="true" allow="encrypted-media"></iframe> -->
           <a class="btn-floating btn-large waves-effect waves-light black">
             <img id="fav-button" img src="assets/images/Favorite.png">
           </a>
-
         </div>
       </div>
     </div>
@@ -194,13 +195,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <!-- Firebase link-->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> -->
+
 
 
   <script src="./assets/javascript/script.js"></script>
   <!-- <script src="./assets/javascript/ticketMasterApiTest.js"></script> -->
   <!-- <script src="./assets/javascript/firebase.js"></script> -->
-  <!-- <script src = "http://momentjs.com/downloads/moment.js"></script> -->
+  <!-- <script src="http://momentjs.com/downloads/moment.js"></script> -->
 
 </body>
 
