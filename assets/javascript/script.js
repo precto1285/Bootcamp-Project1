@@ -16,7 +16,12 @@ $("document").ready(function () {
                 dataType: "json",
                 success: function (json) {
                     console.log(json);
-                    $("#main-image-element").attr("src", json._embedded.attractions[0].images[0].url);
+
+                     // Loads imaged of artist
+                     var newImage = $('<img id="main-image-element">')
+
+                     $("#main-image-link").append(newImage);
+                     $("#main-image-element").attr("src", json._embedded.attractions[0].images[0].url);
 
                     //external link to youtube:
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('youtube')) {
