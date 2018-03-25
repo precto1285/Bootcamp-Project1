@@ -75,6 +75,11 @@ nav {
     padding: 25px;
     margin: 0 auto;
 }
+#venue-info {
+    /* width: 90%; */
+    padding: 25px;
+    margin: 0 auto;
+}
 
 #artist-name {
     margin: 0;
