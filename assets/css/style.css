@@ -9,6 +9,7 @@ main {
     flex: 1 0 auto;
 }
 h1, h2, h3, h4, h5 {
+    color: #ffffff;
     text-shadow: 1px 1px 3px #550000;
 }
 .slider {
@@ -111,4 +112,7 @@ nav {
 #spotify-player {
     width: 100%;
     height: inherit;
+}
+#venue-info {
+    margin: 20px;
 }

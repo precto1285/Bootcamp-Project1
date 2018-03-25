@@ -64,6 +64,28 @@ $("document").ready(function () {
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
                         $("#genre-info").append(subGenre);
                     }
+                    var queryURL = "https://rest.bandsintown.com/artists/"+ input + "/events?app_id=Jan"
+                    $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    }).then(function (response) {
+                
+                        // Printing the entire object to console
+                        console.log(response);
+                        
+                        // Empty the contents of the artist-div, append the new artist content
+                        $("#venues").empty();
+                        for (var i = 0; i < response.length; i++){
+                            $("#venues").append(response[i].datetime + "<br>");
+                            $("#venues").append(response[i].venue.name + "<br>");
+                            $("#venues").append(response[i].venue.city + "<br>");
+                            $("#venues").append(response[i].venue.region + "<br>");
+                            $("#venues").append(response[i].venue.country + "<br>");
+                            $("#venues").append("----------------------------------<br><br>");
+                                    
+                
+                        }
+                    });
                 },
                 error: function (xhr, status, err) {
                     // This time, we do not end up here!
