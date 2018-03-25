@@ -12,13 +12,13 @@ function searchBandsInTown(artist) {
         console.log(response);
         
         // Empty the contents of the artist-div, append the new artist content
-        $("#artist-div").empty();
+        $("#venues").empty();
         for (var i = 0; i < response.length; i++){
-            $("#artist-div").append(response[i].venue.name + "<br>");
-            $("#artist-div").append(response[i].venue.city + "<br>");
-            $("#artist-div").append(response[i].venue.region + "<br>");
-            $("#artist-div").append(response[i].venue.country + "<br>");
-            $("#artist-div").append("----------------------------------<br><br>");
+            $("#venues").append(response[i].venue.name + "<br>");
+            $("#venues").append(response[i].venue.city + "<br>");
+            $("#venues").append(response[i].venue.region + "<br>");
+            $("#venues").append(response[i].venue.country + "<br>");
+            $("#venues").append("----------------------------<br><br>");
                     
 
         }
