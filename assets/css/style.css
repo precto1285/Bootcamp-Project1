@@ -75,11 +75,6 @@ nav {
     padding: 25px;
     margin: 0 auto;
 }
-#venue-info {
-    /* width: 90%; */
-    padding: 25px;
-    margin: 0 auto;
-}
 
 #artist-name {
     margin: 0;
@@ -101,9 +96,9 @@ nav {
     align-items: center;
     padding: 0 1em 0 1em;
 }
-.card-contents {
+/* .card-contents {
     /* visibility: hidden; */
-}
+} */
 
 .social-button {
     height: 2em;
