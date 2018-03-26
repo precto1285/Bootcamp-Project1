@@ -14,6 +14,7 @@ function searchBandsInTown(artist) {
         // Empty the contents of the artist-div, append the new artist content
         $("#venues").empty();
         for (var i = 0; i < response.length; i++){
+            
             $("#venues").append(response[i].venue.name + "<br>");
             $("#venues").append(response[i].venue.city + "<br>");
             $("#venues").append(response[i].venue.region + "<br>");

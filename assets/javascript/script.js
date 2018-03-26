@@ -20,7 +20,7 @@ $("document").ready(function () {
                      // Loads imaged of artist
                      var newImage = $('<img id="main-image-element">')
 
-                     $("#main-image-link").append(newImage);
+                     $("#main-image-link").html(newImage);
                      $("#main-image-element").attr("src", json._embedded.attractions[0].images[0].url);
 
                     //external link to youtube:
