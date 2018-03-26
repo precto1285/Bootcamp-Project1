@@ -1,3 +1,6 @@
+html {
+    background-image: url("../images/grey_wash_wall_@2X.png");
+}
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
@@ -11,6 +14,9 @@ main {
 h1, h2, h3, h4, h5 {
     color: #ffffff;
     text-shadow: 1px 1px 3px #550000;
+}
+.concert-row {
+    width: 100%;
 }
 .slider {
     background-color: none;
@@ -46,6 +52,7 @@ nav {
     width: 100%;
     height: 544px;
     position: relative;
+
 }
 
 .card-content,
@@ -78,19 +85,21 @@ nav {
 }
 
 #artist-name {
-    margin: 0;
+    margin: 0 33%;
     color: white;
 }
 
 #main-image-element {
-    background-color: lime;
+    position: relative;
+    margin: 0 33%;
     height: 20em;
-    width: 20em;
+    width: 30em;
 }
 
 #site-icons {
-    width: 20em;
-    height: 3em;
+    margin: 0 33%;
+    width: 30em;
+    height: 6em;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -99,8 +108,8 @@ nav {
 }
 
 .social-button {
-    height: 2em;
-    width: 2em;
+    height: 4em;
+    width: 4em;
 }
 
 .unavailable {

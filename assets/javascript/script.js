@@ -1,6 +1,7 @@
 $("document").ready(function () {
     $(".button-collapse").sideNav();
     $('.slider').slider();
+    $("#site-icons").hide();
 
     $(document).on("keypress", "#search", function (event) {
         if (event.keyCode === 13) {
@@ -8,6 +9,10 @@ $("document").ready(function () {
             event.preventDefault();
             console.log("search triggered");
             var input = $("#search").val().trim();
+            var newSearchDiv = $('<div>');
+            newSearchDiv.addClass('search-background');
+            $(".slider").empty();
+            $(".slider").html(newSearchDiv);
             $("#artist-name").html(input);
             $.ajax({
                 type: "GET",
@@ -17,12 +22,12 @@ $("document").ready(function () {
                 success: function (json) {
                     console.log(json);
 
-                     // Loads imaged of artist
-                     var newImage = $('<img id="main-image-element">')
+                    // Loads imaged of artist
+                    var newImage = $('<img id="main-image-element">')
 
-                     $("#main-image-link").html(newImage);
-                     $("#main-image-element").attr("src", json._embedded.attractions[0].images[0].url);
-
+                    $("#main-image-link").html(newImage);
+                    $("#main-image-element").attr("src", json._embedded.attractions[0].images[0].url);
+                    $("#site-icons").show();
                     //external link to youtube:
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].externalLinks.hasOwnProperty('youtube')) {
                         console.log("works");
@@ -69,27 +74,37 @@ $("document").ready(function () {
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
                         $("#genre-info").append(subGenre);
                     }
-                    var queryURL = "https://rest.bandsintown.com/artists/"+ input + "/events?app_id=Jan"
+                    var queryURL = "https://rest.bandsintown.com/artists/" + input + "/events?app_id=Jan"
                     $.ajax({
                         url: queryURL,
                         method: "GET"
                     }).then(function (response) {
-                
+
                         // Printing the entire object to console
                         console.log(response);
-                        
+
                         // Empty the contents of the artist-div, append the new artist content
                         $("#venues").empty();
-                        for (var i = 0; i < response.length; i++){
-                            $("#venues").append(response[i].datetime + "<br>");
-                            $("#venues").append(response[i].venue.name + "<br>");
-                            $("#venues").append(response[i].venue.city + "<br>");
-                            $("#venues").append(response[i].venue.region + "<br>");
-                            $("#venues").append(response[i].venue.country + "<br>");
-                            $("#venues").append("----------------------------------<br><br>");
-                                    
-                
+                        var newTable = $('<table>');
+
+
+                        var tourDate = 0;
+                        for (var j = 0; j < 2; j++) {
+                            var concertRow = $("<tr>");
+                            for (var i = 0; i < 3; i++) {
+                                concertRow.append("<td>" + response[tourDate].datetime + "<br>" +
+                                    response[tourDate].venue.name + "<br>" +
+                                    response[tourDate].venue.city + "<br>" +
+                                    response[tourDate].venue.region + "<br>" +
+                                    response[tourDate].venue.country + "<br></td>");
+                                    tourDate++;
+
+                            }
+                            newTable.append(concertRow);
                         }
+                        $("#venues").html(newTable);
+
+
                     });
                 },
                 error: function (xhr, status, err) {
