@@ -81,6 +81,7 @@ $("document").ready(function () {
                         // Empty the contents of the artist-div, append the new artist content
                         $("#venues").empty();
                         for (var i = 0; i < response.length; i++){
+                            var newRow = $("<tr>")
                             $("#venues").append(response[i].datetime + "<br>");
                             $("#venues").append(response[i].venue.name + "<br>");
                             $("#venues").append(response[i].venue.city + "<br>");
