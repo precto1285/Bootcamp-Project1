@@ -88,7 +88,38 @@ $("document").ready(function () {
                             $("#venues").append(response[i].venue.region + "<br>");
                             $("#venues").append(response[i].venue.country + "<br>");
                             $("#venues").append("----------------------------------<br><br>");
-                                    
+
+                               //Trying to get response to write to html in table format 
+                            $.getJSON(queryUrl,
+                                function (response) {
+                                    var tr;
+                                    for (var i = 0; i < response.length; i++) {
+                                        tr = $('<tr/>');
+                                        tr.append("<td>" + response[i].datetime + "</td>");
+                                        tr.append("<td>" + response[i].venue.name + "</td>");
+                                        tr.append("<td>" + response[i].venue.city + "</td>");
+                                        tr.append("<td>" + response[i].venue.region + "</td>");
+                                        tr.append("<td>" + response[i].venue.country + "</td>");
+                                        $("#venues").append(tr);
+                                    }
+                                });
+                            // $("#venues").append("<tr><td>" + response.val().venue + 
+                            // "</td><td>" + response.val().datetime +
+                            // "</td><td>" + response.val().venue.name + 
+                            // "</td><td>" + response.val().venue.city +
+                            // "</td><td>" + response.val().venue.region + 
+                            // "</td><td>" + response.val().venue.country +"</td></tr>");    
+                
+                            
+                            // function(response) {
+                            //     $.each(response, function(key, val) {
+                            //         var tr=$('<tr></tr>');
+                            //         $.each(val, function(k, v){
+                            //             $('<td>'+ response +'</td>').appendTo(tr);
+                            //         });
+                            //         tr.appendTo("#venues");
+                            //     });​
+                            // });​
                 
                         }
                     });
