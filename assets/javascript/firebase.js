@@ -25,80 +25,56 @@ firebase.initializeApp(config);
 
          // Capture Button Click
          $(document).on("keypress", "#search", function (event) {
-         if (event.keyCode === 13){
-          event.preventDefault();
-          console.log("hi");
-       
-      
-
-      //    // Grabbed values from text boxes
-          var search = $("#search").val().trim();
-          favorites = $("#search").val().trim();
-          console.log(search);
-        //  database.favorites.push(input);
-        //  console.log(snapshot.favorites);
-
-
-         // Code for handling the push
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            
+            // Grabbed values from text boxes
+            var search = $("#search").val().trim();
+            console.log(search);
+            console.log("HiH");
+        
+        
+            // Code for handling the push
             database.ref().push({
-            search: search,
-            // dateAdded: firebase.database.ServerValue.TIMESTAMP
-            favorites: favorites,
-         });
-      
-   
-      //   Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-      database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-     
-   
-      //    // Console.loging the last user's data
-      //    console.log(search);
-         
- 
-      });   
- 
-            database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
- 
-          // Change the HTML to reflect
-          $("#search").text(snapshot.val().search);
-          // $("#fav-info").text(snapshot.val().search);
-
-        });
-
-             // This function handles events where one button is clicked
-    $("#search").on("click", function (snapshot) {
-      event.preventDefault();
-      // // This line grabs the input from the textbox
-      // var input = $("#search").val().trim();
-      // // Adding the drinks from the textbox to our array
-      // database.favorites.prepend(input);
-      // console.log(snapshot.favorites);
-      
-    });
-
-    //Initial Load  and on child added
-database.ref().on("child_added", function(snap){
-
-	// firstTrain = snap.val().first;
-	// frequency = snap.val().frequency;
-	// nextArrival();
-
-	$("#fav-info-table").append("<td>" + snap.val().favorites + "</td>")
-		"</td><td>" + snap.val().favorites + "</td>"
-		// "</td><td>" + snap.val().frequency + 
-    // "</td><td>" + snap.val().nextTrain +
- 
-
-// Handle the errors
-}, function(errorObject){
-	console.log("Errors handled: " + errorObject.code);
-});
-   
-          }
-         });
+              search: search
+            });
         
-      
-
-        // Click function for favorites button
-
         
+            //Initial Load  and on child added
+            var recentSearch = [];
+            database.ref().on("child_added", function (snap) {
+              // var prevSearch = {"":"",};
+              for (var i = 0; i < 1; i++) {
+                var obj = snap.val().search;
+                // console.log(obj);
+                // var prevSearch = (obj = "what");
+                // for(var x = 0; x < recentSearch.length; x++) {
+                  //   if (obj === recentSearch[i])
+                  // }
+                  // console.log(prevSearch);
+                  recentSearch.push(snap.val().search);
+                  // console.log(recentSearch);
+                }
+                var bands = {};
+                for (var b = 0; b < recentSearch.length; b++) {
+                  var newName = recentSearch[b];
+                  console.log("check");
+                  for (var a = 0; a < bands.length; a++) {
+                    var newBand = bands[a];
+                  }
+                    if (newName !== newBand) {
+                      var bandName = newName;
+                      bands[bandName] = 1;
+                      console.log("this is related to the first loop");
+                    }
+                    else if (newName === newBand) {
+                      bands[newName] = bands[newName].value++;
+                      console.log("band already been searched!")
+                    } else {
+                      console.log('nope');
+                    }
+                  console.log(bands);
+                }
+              });
+            }
+         });
