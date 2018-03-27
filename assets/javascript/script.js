@@ -67,7 +67,7 @@ $("document").ready(function () {
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('genre')) {
                         console.log("works");
                         var genre = json._embedded.attractions[0].classifications[0].genre.name;
-                        $("#genre-info-div").text(genre);
+                        $("#primary-genre").text(genre);
                         $.ajax({
                             type: "GET",
                             url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + genre + "&apikey=" + apiKey,
@@ -75,14 +75,14 @@ $("document").ready(function () {
                             dataType: "json",
                             success: function (json) {
                                 console.log("This is the genre call!");
-                                var newPara = $("<p>");
                                 for (var i = 1; i < 4; i++) {
+                                    var newLi = $("<li>");
                                     // var newTD = $("<td>");
                                     var data = json._embedded.attractions[i].name
                                     // console.log(json._embedded.attractions[i].name);
                                     // $(newTD).append(data);
-                                    $(newPara).append(data);
-                                    $("#genre-info-div").append(newPara);
+                                    $(newLi).append(data);
+                                    $("#primary-list").append(newLi);
                                     console.log("success?");
                                 }
                                 console.log("Look Here!!!");
@@ -93,7 +93,7 @@ $("document").ready(function () {
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('subGenre')) {
                         console.log("works");
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
-                        $("#genre-info-div").append(subGenre);
+                        $("#secondary-genre").append(subGenre);
                         $.ajax({
                             type: "GET",
                             url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + subGenre + "&apikey=" + apiKey,
@@ -101,7 +101,17 @@ $("document").ready(function () {
                             dataType: "json",
                             success: function (json) {
                                 console.log("This is the subGenre call!");
-                                console.log(json);
+                                for (var i = 1; i < 4; i++) {
+                                    var newLi = $("<li>");
+                                    // var newTD = $("<td>");
+                                    var data = json._embedded.attractions[i].name
+                                    // console.log(json._embedded.attractions[i].name);
+                                    // $(newTD).append(data);
+                                    $(newLi).append(data);
+                                    $("#secondary-list").append(newLi);
+                                    console.log("success?");
+                                    console.log(json);
+                                }
                             }
                         });
                     }
@@ -112,38 +122,41 @@ $("document").ready(function () {
                     }).then(function (response) {
 
                         // Printing the entire object to console
+                        console.log("This is the bands in town api");
                         console.log(response);
 
                         // Empty the contents of the artist-div, append the new artist content
                         $("#venues").empty();
                         var newTable = $('<table>');
-                        
-                        if(response[tourDate] = undefined){
+
+
+                            // May want to include the "has own property" comparison to make statement work.
+                        if (response[tourDate] = undefined) {
                             $('#venues').html('<p>' + 'Sorry, Not On Tour Currently.' + '</p>');
                             console.log("bubba");
                         }
-                        else{
+                        else {
                             var tourDate = 0;
-                        for (var j = 0; j < 2; j++) {
-                            var concertRow = $("<tr>");
-                            for (var i = 0; i < 3; i++) {
-                                concertRow.append("<td>" + response[tourDate].datetime + "<br>" +
-                                    response[tourDate].venue.name + "<br>" +
-                                    response[tourDate].venue.city + "<br>" +
-                                    response[tourDate].venue.region + "<br>" +
-                                    response[tourDate].venue.country + "<br></td>");
+                            for (var j = 0; j < 2; j++) {
+                                var concertRow = $("<tr>");
+                                for (var i = 0; i < 3; i++) {
+                                    concertRow.append("<td>" + response[tourDate].datetime + "<br>" +
+                                        response[tourDate].venue.name + "<br>" +
+                                        response[tourDate].venue.city + "<br>" +
+                                        response[tourDate].venue.region + "<br>" +
+                                        response[tourDate].venue.country + "<br></td>");
                                     tourDate++;
-    
+
+                                }
+                                newTable.append(concertRow);
                             }
-                            newTable.append(concertRow);
-                        }
-                        $("#venues").html(newTable);
-                        console.log("xoxo");
+                            $("#venues").html(newTable);
+                            console.log("xoxo");
                         }
 
 
-                        
-                        
+
+
 
 
                     });
