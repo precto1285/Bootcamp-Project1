@@ -1,15 +1,17 @@
- // Initialize Firebase
- var config = {
+// Initialize Firebase
+var config = {
     apiKey: "AIzaSyACI1VUl9WeNYT0wG8w0SSGW3bjlG-KW2g",
     authDomain: "bootcamp-project-1-f4a8d.firebaseapp.com",
     databaseURL: "https://bootcamp-project-1-f4a8d.firebaseio.com",
     projectId: "bootcamp-project-1-f4a8d",
     storageBucket: "bootcamp-project-1-f4a8d.appspot.com",
     messagingSenderId: "765880317002"
-  };
-  firebase.initializeApp(config);
-  
-  
+};
+firebase.initializeApp(config);
+
+var favorites = ""
+var database = firebase.database();
+
 $("document").ready(function () {
     $(".button-collapse").sideNav();
     $('.slider').slider();
@@ -87,6 +89,7 @@ $("document").ready(function () {
                             dataType: "json",
                             success: function (json) {
                                 console.log("This is the genre call!");
+                                $("#primary-list").empty();
                                 for (var i = 1; i < 4; i++) {
                                     var newLi = $("<li>");
                                     // var newTD = $("<td>");
@@ -104,6 +107,8 @@ $("document").ready(function () {
                     }
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('subGenre')) {
                         console.log("works");
+                        $("#secondary-genre").empty();
+                        $("#secondary-list").empty();
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
                         $("#secondary-genre").append(subGenre);
                         $.ajax({
@@ -142,7 +147,7 @@ $("document").ready(function () {
                         var newTable = $('<table>');
 
 
-                            // May want to include the "has own property" comparison to make statement work.
+                        // May want to include the "has own property" comparison to make statement work.
                         if (response[tourDate] = undefined) {
                             $('#venues').html('<p>' + 'Sorry, Not On Tour Currently.' + '</p>');
                             console.log("bubba");
