@@ -106,9 +106,9 @@ $("document").ready(function () {
                         // Empty the contents of the artist-div, append the new artist content
                         $("#venues").empty();
                         var newTable = $('<table>');
-
-
-                        var tourDate = 0;
+                        
+                        if(response[tourDate] = 0){
+                            var tourDate = 0;
                         for (var j = 0; j < 2; j++) {
                             var concertRow = $("<tr>");
                             for (var i = 0; i < 3; i++) {
@@ -123,6 +123,16 @@ $("document").ready(function () {
                             newTable.append(concertRow);
                         }
                         $("#venues").html(newTable);
+                        console.log("xoxo");
+                        }
+                        else{
+                            $('#venues').html('<p>' + 'Sorry, Not On Tour Currently.' + '</p>');
+                            console.log("bubba");
+                        }
+
+
+                        
+                        
 
 
                     });
