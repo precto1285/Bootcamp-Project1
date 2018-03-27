@@ -15,6 +15,12 @@ h1, h2, h3, h4, h5 {
     color: #ffffff;
     text-shadow: 1px 1px 3px #550000;
 }
+ol {
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #550000;
+
+}
 .concert-row {
     width: 100%;
 }
