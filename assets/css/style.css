@@ -125,3 +125,25 @@ nav {
 #venue-info {
     margin: 20px;
 }
+
+nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 3.1rem;
+    padding: 0;
+    /* margin-left: -200px; */
+}
+
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+    background-color: black;
+    /* margin-right: -750px; */
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color:rgb(223, 219, 219);
+    font-size: 1.5em;
+    
+}

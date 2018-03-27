@@ -85,10 +85,6 @@ $("document").ready(function () {
 
                         // Empty the contents of the artist-div, append the new artist content
                         $("#venues").empty();
-<<<<<<< HEAD
-=======
-
->>>>>>> b6c842540dd231aae54790d86b191fa33e95978f
                         var newTable = $('<table>');
 
 
@@ -105,10 +101,6 @@ $("document").ready(function () {
 
                             }
                             newTable.append(concertRow);
-<<<<<<< HEAD
-=======
-
->>>>>>> b6c842540dd231aae54790d86b191fa33e95978f
                         }
                         $("#venues").html(newTable);
 
