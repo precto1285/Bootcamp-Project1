@@ -68,11 +68,31 @@ $("document").ready(function () {
                         console.log("works");
                         var genre = json._embedded.attractions[0].classifications[0].genre.name;
                         $("#genre-info").html(genre);
+                        $.ajax({
+                            type: "GET",
+                            url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + genre + "&apikey=" + apiKey,
+                            async: true,
+                            dataType: "json",
+                            success: function (json) {
+                                console.log("This is the genre call!");
+                                console.log(json);
+                            }
+                        });
                     }
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('subGenre')) {
                         console.log("works");
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
                         $("#genre-info").append(subGenre);
+                        $.ajax({
+                            type: "GET",
+                            url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + subGenre + "&apikey=" + apiKey,
+                            async: true,
+                            dataType: "json",
+                            success: function (json) {
+                                console.log("This is the subGenre call!");
+                                console.log(json);
+                            }
+                        });
                     }
                     var queryURL = "https://rest.bandsintown.com/artists/" + input + "/events?app_id=Jan"
                     $.ajax({
