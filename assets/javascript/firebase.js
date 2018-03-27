@@ -29,7 +29,7 @@ firebase.initializeApp(config);
             event.preventDefault();
             
             // Grabbed values from text boxes
-            var search = $("#search").val().trim();
+            var search = $("#search").val().trim().toUpperCase();
             console.log(search);
             console.log("HiH");
         
@@ -55,7 +55,7 @@ firebase.initializeApp(config);
                   recentSearch.push(snap.val().search);
                   // console.log(recentSearch);
                 }
-                var bands = {};
+                var bands = [];
                 for (var b = 0; b < recentSearch.length; b++) {
                   var newName = recentSearch[b];
                   console.log("check");
@@ -64,14 +64,21 @@ firebase.initializeApp(config);
                   }
                     if (newName !== newBand) {
                       var bandName = newName;
-                      bands[bandName] = 1;
+                      bands.unshift(bandName);
+                      // bands[bandName] = 1;
                       console.log("this is related to the first loop");
                     }
                     else if (newName === newBand) {
-                      bands[newName] = bands[newName].value++;
+                      // bands[newName] = bands[newName].value++;
                       console.log("band already been searched!")
                     } else {
                       console.log('nope');
+                    }
+                    for (var x = 0; x < 10; x++) {
+                      var newLi = $("<li>");
+                      var data = bands[x];
+                      $(newLi).append(data);
+                      $("#search-list").append(newLi);
                     }
                   console.log(bands);
                 }
