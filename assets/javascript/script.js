@@ -67,7 +67,7 @@ $("document").ready(function () {
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('genre')) {
                         console.log("works");
                         var genre = json._embedded.attractions[0].classifications[0].genre.name;
-                        $("#genre-info").html(genre);
+                        $("#genre-info-div").text(genre);
                         $.ajax({
                             type: "GET",
                             url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + genre + "&apikey=" + apiKey,
@@ -75,6 +75,17 @@ $("document").ready(function () {
                             dataType: "json",
                             success: function (json) {
                                 console.log("This is the genre call!");
+                                var newPara = $("<p>");
+                                for (var i = 1; i < 4; i++) {
+                                    // var newTD = $("<td>");
+                                    var data = json._embedded.attractions[i].name
+                                    // console.log(json._embedded.attractions[i].name);
+                                    // $(newTD).append(data);
+                                    $(newPara).append(data);
+                                    $("#genre-info-div").append(newPara);
+                                    console.log("success?");
+                                }
+                                console.log("Look Here!!!");
                                 console.log(json);
                             }
                         });
@@ -82,7 +93,7 @@ $("document").ready(function () {
                     if (json._embedded.attractions[0].hasOwnProperty('externalLinks') && json._embedded.attractions[0].classifications[0].hasOwnProperty('subGenre')) {
                         console.log("works");
                         var subGenre = json._embedded.attractions[0].classifications[0].subGenre.name;
-                        $("#genre-info").append(subGenre);
+                        $("#genre-info-div").append(subGenre);
                         $.ajax({
                             type: "GET",
                             url: "https://app.ticketmaster.com/discovery/v2/attractions.json?classificationName=" + subGenre + "&apikey=" + apiKey,
@@ -107,7 +118,11 @@ $("document").ready(function () {
                         $("#venues").empty();
                         var newTable = $('<table>');
                         
-                        if(response[tourDate] = 0){
+                        if(response[tourDate] = undefined){
+                            $('#venues').html('<p>' + 'Sorry, Not On Tour Currently.' + '</p>');
+                            console.log("bubba");
+                        }
+                        else{
                             var tourDate = 0;
                         for (var j = 0; j < 2; j++) {
                             var concertRow = $("<tr>");
@@ -118,16 +133,12 @@ $("document").ready(function () {
                                     response[tourDate].venue.region + "<br>" +
                                     response[tourDate].venue.country + "<br></td>");
                                     tourDate++;
-
+    
                             }
                             newTable.append(concertRow);
                         }
                         $("#venues").html(newTable);
                         console.log("xoxo");
-                        }
-                        else{
-                            $('#venues').html('<p>' + 'Sorry, Not On Tour Currently.' + '</p>');
-                            console.log("bubba");
                         }
 
 
